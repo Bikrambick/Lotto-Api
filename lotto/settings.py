@@ -58,6 +58,8 @@ INSTALLED_APPS = [
 
     'userprofile.apps.UserprofileConfig',
     'lottery.apps.LotteryConfig',
+    'generatedset.apps.GeneratedsetConfig',
+
     'ticket.apps.TicketConfig'
 ]
 
