@@ -37,13 +37,15 @@ urlpatterns = [
     #url(r'^rest-auth/facebook/$', FacebookLogin.as_view(), name='fb_login'),
 
    # url(r'^signup/$', TemplateView.as_view(template_name="rest_auth/signup.html"), name='signup'),
-    
-     url(r'^auth/', include('rest_framework_social_oauth2.urls')),
+    #url(r'^oauth/', include('social_django.urls', namespace='social')),
+    url(r'^auth/', include('rest_framework_social_oauth2.urls')),
     #rest_framework
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest-framework')),
 
     #users links
     url(r'^', include('userprofile.urls', namespace='users')),  
+    #lottery links
+    url(r'^', include('lottery.urls', namespace='lottery')),  
   
     url(r'^ticket-generator/', createTicket, name='create-ticket'),
     

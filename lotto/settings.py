@@ -48,8 +48,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'gunicorn',
 
-    #'allauth.socialaccount',
-    #'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
     #'allauth.socialaccount.providers.twitter',
 
     'oauth2_provider',
@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'rest_framework_social_oauth2',
 
     'userprofile.apps.UserprofileConfig',
+    'lottery.apps.LotteryConfig',
     'ticket.apps.TicketConfig'
 ]
 
@@ -137,9 +138,16 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
   'fields': 'id, name, email, age_range'
 }
 
+
+SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
+SOCIALACCOUNT_EMAIL_REQUIRED = False
+SOCIALACCOUNT_QUERY_EMAIL = True
+
+
 SOCIAL_AUTH_FACEBOOK_API_VERSION = '2.10'
 SOCIAL_AUTH_FACEBOOK_KEY = '493709554340952'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'b5da79c30de72dbef48029a80dc36cf7'
+LOGIN_REDIRECT_URL = '/'
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
 # Password validation

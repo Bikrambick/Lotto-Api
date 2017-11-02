@@ -7,7 +7,8 @@ from rest_framework.permissions import IsAuthenticated
 #@permission_classes((IsAuthenticated,))
 def api_root(request, format=None):
     return Response({
-    	'users': reverse('users:user_list', request=request, format=format)
+    	'users': reverse('users:user_list', request=request, format=format),
+        'lottery' : reverse('lottery:lottery_list', request= request, format=format),
     })
 
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
